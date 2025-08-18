@@ -12,3 +12,5 @@ vim.opt.tabstop = 4              -- Number of spaces a tab counts for
 vim.opt.softtabstop = 4          -- Number of spaces a <Tab> feels like
 vim.opt.shiftwidth = 4           -- Indentation amount
 vim.opt.smartindent = true       -- Smart indenting on new lines
+vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
+
