@@ -3,7 +3,6 @@ return {
 	lazy = false,
 	name = "catppuccin",
 	priority = 1000,
-    auto_integrations = true,
 	config = function()
 		require("catppuccin").setup({
 			flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -41,7 +40,13 @@ return {
 				operators = {},
 			},
 			color_overrides = {},
-			custom_highlights = {},
+			custom_highlights = function(colors)
+				return {
+					LineNr = { fg = "#888888" },
+					CursorLineNr = { fg = "#FFFF00", bold = true },
+					Visual = { bg = "#264F78" }, -- VS Code-like blue selection
+				}
+			end,
 			default_integrations = true,
 			auto_integrations = false,
 			integrations = {
