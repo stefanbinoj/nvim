@@ -14,3 +14,15 @@ vim.opt.shiftwidth = 4           -- Indentation amount
 vim.opt.smartindent = true       -- Smart indenting on new lines
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 
+vim.keymap.set("v", "<leader>p", [["_dP]])
+vim.keymap.set("v", "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [[gg"+yG]])
+
+-- Move selected lines up/down in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Selection color: blue
+vim.api.nvim_set_hl(0, "Visual", { bg = "#264F78" })
+
