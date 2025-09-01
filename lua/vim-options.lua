@@ -28,3 +28,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Selection color: blue
 vim.api.nvim_set_hl(0, "Visual", { bg = "#264F78" })
 
+-- Another 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.autoread = true
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
