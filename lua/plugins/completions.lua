@@ -1,9 +1,10 @@
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
-	},{
-        "github/copilot.vim"
-    },
+	},
+	{
+		"github/copilot.vim",
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
@@ -13,6 +14,10 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-buffer", -- 👈 suggests words from current buffer
+			"hrsh7th/cmp-path", -- 👈 suggests file paths
+		},
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
@@ -33,12 +38,12 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
-				sources = cmp.config.sources({
-					{ name = "luasnip" },
+				sources = {
 					{ name = "nvim_lsp" },
-				}, {
+					{ name = "luasnip" },
+					{ name = "path" },
 					{ name = "buffer" },
-				}),
+				},
 			})
 		end,
 	},

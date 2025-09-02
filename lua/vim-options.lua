@@ -1,40 +1,51 @@
--- Leader key
+-- =========================
+-- General Settings
+-- =========================
 vim.g.mapleader = " "
+vim.opt.guicursor = ""         -- Always use block cursor
+vim.opt.wrap = false           -- Don’t wrap long lines
+vim.opt.swapfile = false       -- Disable swap files
+vim.opt.backup = false         -- Disable backup files
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true        -- Persistent undo history
+vim.opt.autoread = true        -- Auto-reload files changed outside
 
--- UI settings
-vim.opt.scrolloff = 8
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- =========================
+-- UI Settings
+-- =========================
+vim.opt.number = true          -- Show absolute line numbers
+vim.opt.relativenumber = true  -- Relative numbers for movement
+vim.opt.scrolloff = 18         -- Keep 18 lines visible above/below cursor
+vim.opt.signcolumn = "yes"     -- Always show sign column
+vim.opt.colorcolumn = "120"    -- Highlight column 120
+vim.opt.termguicolors = true   -- Enable true colors
+vim.opt.updatetime = 50        -- Faster updates
+vim.opt.isfname:append("@-@")  -- Allow @ and - in filenames
 
--- Indentation
-vim.opt.expandtab = true         -- Use spaces instead of tabs
-vim.opt.tabstop = 4              -- Number of spaces a tab counts for
-vim.opt.softtabstop = 4          -- Number of spaces a <Tab> feels like
-vim.opt.shiftwidth = 4           -- Indentation amount
-vim.opt.smartindent = true       -- Smart indenting on new lines
-vim.opt.swapfile = false
-vim.o.termguicolors = true
-vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
-
-vim.keymap.set("v", "<leader>p", [["_dP]])
-vim.keymap.set("v", "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [[gg"+yG]])
-
--- Move selected lines up/down in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
--- Selection color: blue
+-- Highlight visual selection (blue)
 vim.api.nvim_set_hl(0, "Visual", { bg = "#264F78" })
 
--- Another 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.autoread = true
+-- =========================
+-- Indentation
+-- =========================
+vim.opt.expandtab = true       -- Convert tabs to spaces
+vim.opt.tabstop = 4            -- Spaces per tab
+vim.opt.softtabstop = 4        -- Spaces when pressing <Tab>
+vim.opt.shiftwidth = 4         -- Spaces per indentation level
+vim.opt.smartindent = true     -- Auto-indent new lines
 
+-- =========================
+-- Search
+-- =========================
+vim.opt.hlsearch = false       -- Don’t highlight all matches
+vim.opt.incsearch = true       -- Highlight matches while typing
+vim.opt.ignorecase = true      -- Ignore case by default
+vim.opt.smartcase = true       -- Override ignorecase if query has uppercase
+
+-- =========================
+-- Autocommands
+-- =========================
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
-  pattern = "*",
-  command = "checktime",
+    pattern = "*",
+    command = "checktime",
 })
-
