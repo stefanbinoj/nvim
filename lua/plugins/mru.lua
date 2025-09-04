@@ -2,7 +2,7 @@ return {
   "wsdjeg/mru.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },
   keys = {
-    { "<leader>fg", "<cmd>Telescope mru<cr>", desc = "Most Recently Used Files" },
+    { "<leader>mru", "<cmd>Telescope mru<cr>", desc = "Most Recently Used Files" },
   },
   config = function()
     require("mru").setup({

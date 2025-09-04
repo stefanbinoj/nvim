@@ -70,3 +70,6 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 -- Navigate location list (local errors/warnings)
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- Toggle folds
+vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })
