@@ -4,7 +4,6 @@
 
 -- Escape insert mode quickly with "jk"
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-c>", "<Esc>") -- Ctrl+C also escapes insert mode
 
 -- Disable Ex mode (Q) because it’s rarely useful
 vim.keymap.set("n", "Q", "<nop>")
@@ -64,12 +63,12 @@ vim.keymap.set("n", "<C-n>", vim.cmd.Ex)
 -- ===============================
 
 -- Navigate quickfix list (global errors/warnings)
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
 
 -- Navigate location list (local errors/warnings)
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+--vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+--vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Toggle folds
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })

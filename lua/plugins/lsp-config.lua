@@ -37,7 +37,7 @@ return {
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
             vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-            vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {})
+            vim.keymap.set("i", "<C-j>", vim.lsp.buf.signature_help, {})
         end,
     },
 }
