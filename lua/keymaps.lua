@@ -56,7 +56,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- ===============================
 
 -- Open netrw (or file explorer replacement)
-vim.keymap.set("n", "<C-n>", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- ===============================
 -- QUICKFIX / LOCATION LIST
