@@ -1,6 +1,7 @@
 # Neovim Config
 
-<img>
+<img width="1907" height="1023" alt="Screenshot 2025-09-27 at 1 33 55 PM" src="https://github.com/user-attachments/assets/699c37a7-19fc-4b44-a324-9650334f5d4a" />
+
 
 Modern Neovim setup with essential plugins.
 
@@ -15,8 +16,8 @@ Modern Neovim setup with essential plugins.
 - Treesitter syntax highlighting
 - Auto-formatting & diagnostics
 
-<!-- Image Placeholder: Telescope fuzzy finder in action showing file search results -->
-![Telescope Search](https://via.placeholder.com/600x400/2d333b/ffffff?text=Telescope+Fuzzy+Finder)
+<img width="1910" height="1035" alt="Screenshot 2025-09-27 at 4 44 52 PM" src="https://github.com/user-attachments/assets/52b95c5a-088d-4a92-914a-3fb81e998c6c" />
+
 
 ## Plugins
 
@@ -41,7 +42,4 @@ Modern Neovim setup with essential plugins.
 - [undotree](https://github.com/mbbill/undotree) - Undo history
 - [vim-wakatime](https://github.com/wakatime/vim-wakatime) - Time tracking
 
-<!-- Image Placeholder: Git integration showing diff view with Fugitive -->
-![Git Integration](https://via.placeholder.com/600x400/2d333b/ffffff?text=Git+Integration+View)
-
-💝 **Made with love by Stefan** 💝
+<img width="1906" height="1050" alt="Screenshot 2025-09-27 at 4 46 47 PM" src="https://github.com/user-attachments/assets/5f362119-834f-4b04-8778-7a075c8c02e6" />
