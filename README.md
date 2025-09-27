@@ -1,9 +1,8 @@
-# Stefan's Neovim Config
+# Neovim Config
 
-<!-- Image Placeholder: Main Neovim interface screenshot showing the full editor with syntax highlighting, statusline, and file tree -->
-![Neovim Main Interface](https://via.placeholder.com/800x500/2d333b/ffffff?text=Neovim+Main+Interface)
+<img>
 
-Fast, modern Neovim setup with LSP, Git integration, and productivity tools.
+Modern Neovim setup with essential plugins.
 
 ## Features
 
@@ -44,26 +43,5 @@ Fast, modern Neovim setup with LSP, Git integration, and productivity tools.
 
 <!-- Image Placeholder: Git integration showing diff view with Fugitive -->
 ![Git Integration](https://via.placeholder.com/600x400/2d333b/ffffff?text=Git+Integration+View)
-
-## Key Bindings
-
-**Leader:** `<Space>`
-
-- `<C-p>` - Find files
-- `<C-n>` - Toggle file tree
-- `<leader>fg` - Live grep
-- `<leader>gs` - Git status
-- `<leader>a` - Add to Harpoon
-- `jk` - Exit insert mode
-
-## Setup
-
-```bash
-git clone https://github.com/stefanbinoj/nvim.git ~/.config/nvim
-nvim
-```
-
-<!-- Image Placeholder: Installation process or first-time setup screen -->
-![Setup Process](https://via.placeholder.com/600x300/2d333b/ffffff?text=Installation+Process)
 
 💝 **Made with love by Stefan** 💝
