@@ -18,6 +18,9 @@ Modern Neovim setup with essential plugins.
 
 <img width="1910" height="1035" alt="Screenshot 2025-09-27 at 4 44 52 PM" src="https://github.com/user-attachments/assets/52b95c5a-088d-4a92-914a-3fb81e998c6c" />
 
+<img width="1893" height="1048" alt="Screenshot 2025-09-27 at 7 42 23 PM" src="https://github.com/user-attachments/assets/84b11de4-361f-4ece-8880-680843aa446d" />
+
+
 
 ## Plugins
 
@@ -43,3 +46,5 @@ Modern Neovim setup with essential plugins.
 - [vim-wakatime](https://github.com/wakatime/vim-wakatime) - Time tracking
 
 <img width="1906" height="1050" alt="Screenshot 2025-09-27 at 4 46 47 PM" src="https://github.com/user-attachments/assets/5f362119-834f-4b04-8778-7a075c8c02e6" />
+
+
