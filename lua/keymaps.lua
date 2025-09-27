@@ -10,7 +10,7 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Reload current config without restarting Neovim
 vim.keymap.set("n", "<leader><leader>", function()
-  vim.cmd("so")
+	vim.cmd("so")
 end)
 
 -- ===============================
@@ -72,3 +72,10 @@ vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
 
 -- Toggle folds
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })
+
+vim.opt.guicursor = {
+	"n:block", -- Normal mode: block cursor
+	"i-ci:ver25-blinkon500", -- Insert and command-line insert: vertical bar + blinking
+	"r-cr:hor20", -- Replace and command-line replace: horizontal
+	"o:hor50", -- Operator-pending: thicker horizontal line
+}
