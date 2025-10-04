@@ -63,12 +63,12 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- ===============================
 
 -- Navigate quickfix list (global errors/warnings)
-vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>cp", "<cmd>cprev<CR>zz")
 
 -- Navigate location list (local errors/warnings)
---vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
---vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 
 -- Toggle folds
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })
