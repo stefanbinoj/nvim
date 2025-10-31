@@ -2,7 +2,7 @@
 -- General Settings
 -- =========================
 vim.g.mapleader = " "
-vim.opt.guicursor = ""         -- Always use block cursor
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 vim.opt.wrap = false           -- Don’t wrap long lines
 vim.opt.swapfile = false       -- Disable swap files
 vim.opt.backup = false         -- Disable backup files
@@ -77,3 +77,6 @@ vim.opt.listchars = {
     precedes = "«",
 }
 
+vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3a3a3a" })
+vim.api.nvim_set_hl(0, 'Beacon', { bg = 'white' })
