@@ -80,3 +80,4 @@ vim.opt.listchars = {
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3a3a3a" })
 vim.api.nvim_set_hl(0, 'Beacon', { bg = 'white' })
+vim.opt.showmode = false
