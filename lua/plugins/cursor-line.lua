@@ -13,9 +13,9 @@ return {
 				fps = 60,
 				min_jump = 10,
 				cursor_events = { "CursorMoved" },
-				window_events = { "WinEnter", "FocusGained", "BufChange", "BufEnter" },
+				window_events = { "WinEnter", "FocusGained", "BufEnter" },
 				highlight = { bg = "white", ctermbg = 15 },
 			})
-			end,
+		end,
 	},
 }
