@@ -8,7 +8,7 @@ return {
 				pickers = {
 					find_files = {
 						-- theme = "ivy",
-						find_command = { "rg", "--files", "--ignore", "--hidden", "-g", "!node_modules/*", "-g", "-g", "!.git/*" },
+						find_command = { "rg", "--files", "--ignore", "--hidden", "-g", "!node_modules/*", "-g", "!.git/*" },
 					},
 				},
 			})
@@ -20,6 +20,7 @@ return {
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
 			end)
 			vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+			vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "List old files" })
 		end,
 	},
 	-- {
