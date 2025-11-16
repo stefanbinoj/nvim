@@ -79,3 +79,9 @@ vim.opt.guicursor = {
 	"r-cr:hor20", -- Replace and command-line replace: horizontal
 	"o:hor50", -- Operator-pending: thicker horizontal line
 }
+
+vim.keymap.set("n", "<leader>fp", function()
+  local path = vim.fn.expand("%:.")   -- relative path
+  print(path)                         -- show it in command area
+  vim.fn.setreg("+", path)            -- copy to system clipboard ("+")
+end, { desc = "Copy relative file path" })
