@@ -73,13 +73,6 @@ vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 -- Toggle folds
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })
 
-vim.opt.guicursor = {
-	"n:block", -- Normal mode: block cursor
-	"i-ci:ver25-blinkon500", -- Insert and command-line insert: vertical bar + blinking
-	"r-cr:hor20", -- Replace and command-line replace: horizontal
-	"o:hor50", -- Operator-pending: thicker horizontal line
-}
-
 vim.keymap.set("n", "<leader>fp", function()
   local path = vim.fn.expand("%:.")   -- relative path
   print(path)                         -- show it in command area

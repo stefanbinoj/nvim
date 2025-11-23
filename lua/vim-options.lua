@@ -2,7 +2,6 @@
 -- General Settings
 -- =========================
 vim.g.mapleader = " "
-vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 vim.opt.wrap = false           -- Don’t wrap long lines
 vim.opt.swapfile = false       -- Disable swap files
 vim.opt.backup = false         -- Disable backup files
@@ -17,7 +16,6 @@ vim.opt.number = true          -- Show absolute line numbers
 vim.opt.relativenumber = true  -- Relative numbers for movement
 vim.opt.scrolloff = 18         -- Keep 18 lines visible above/below cursor
 vim.opt.signcolumn = "yes"     -- Always show sign column
-vim.opt.colorcolumn = "120"    -- Highlight column 120
 vim.opt.termguicolors = true   -- Enable true colors
 vim.opt.updatetime = 50        -- Faster updates
 vim.opt.isfname:append("@-@")  -- Allow @ and - in filenames
@@ -81,3 +79,11 @@ vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#3a3a3a" })
 vim.api.nvim_set_hl(0, 'Beacon', { bg = 'white' })
 vim.opt.showmode = false
+
+
+vim.opt.guicursor = {
+	"n:block", -- Normal mode: block cursor
+	"i-ci:ver25-blinkon500", -- Insert and command-line insert: vertical bar + blinking
+	"r-cr:hor20", -- Replace and command-line replace: horizontal
+	"o:hor50", -- Operator-pending: thicker horizontal line
+}
