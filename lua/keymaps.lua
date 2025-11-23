@@ -8,11 +8,6 @@ vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 -- Disable Ex mode (Q) because it’s rarely useful
 vim.keymap.set("n", "Q", "<nop>")
 
--- Reload current config without restarting Neovim
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end)
-
 -- ===============================
 -- PASTE / DELETE / YANK BEHAVIOR
 -- ===============================
