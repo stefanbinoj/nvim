@@ -1,88 +1,56 @@
 return {
-	"romgrk/barbar.nvim",
-	dependencies = {
-		"lewis6991/gitsigns.nvim",
-		"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
-	},
-	opts = {
-		-- Automatically hide the tabline when there are this many buffers left.
-		-- Set to any value >=0 to enable.
-		auto_hide = 3,
-		animation = true,
+    "romgrk/barbar.nvim",
+    dependencies = {
+        {
+            "lewis6991/gitsigns.nvim",
+            -- Ensure gitsigns is actually running, otherwise barbar has no data to show
+            config = function() require('gitsigns').setup() end
+        },
+        "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+        auto_hide = 1,
+        animation = false,
+        tabpages = true,
+        clickable = true,
+        focus_on_close = "previous",
+        highlight_alternate = false,
+        highlight_inactive_file_icons = true,
+        highlight_visible = true,
+        icons = {
+            git = { enabled = true },
+            buffer_index = true,
+            button = "",
+            diagnostics = {
+                [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+            },
+            filetype = {
+                custom_colors = false,
+                enabled = true,
+            },
+            separator = { left = "▎", right = "" },
+            separator_at_end = true,
+            modified = { button = "●" },
+            pinned = { button = "", filename = true },
+            preset = "default",
+            alternate = { filetype = { enabled = false } },
+            current = { buffer_index = true },
+            inactive = { button = "×" },
+            visible = { modified = { buffer_number = false } },
+        },
+    },
+    version = "^1.0.0",
+    -- We accept 'opts' here (provided by lazy based on the table above)
+    config = function(_, opts)
+        -- VITAL: Initialize the plugin with the options
+        require("barbar").setup(opts)
 
-		-- Enable/disable current/total tabpages indicator (top right corner)
-		tabpages = true,
+        local map = vim.api.nvim_set_keymap
+        local key_opts = { noremap = true, silent = true }
 
-		-- Enables/disable clickable tabs
-		--  - left-click: go to buffer
-		--  - middle-click: delete buffer
-		clickable = true,
-
-		-- Valid options are 'left' (the default), 'previous', and 'right'
-		focus_on_close = "previous",
-
-		-- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-		hide = { extensions = true, inactive = true },
-
-		-- Disable highlighting alternate buffers
-		highlight_alternate = false,
-
-		-- Disable highlighting file icons in inactive buffers
-		highlight_inactive_file_icons = false,
-
-		-- Enable highlighting visible buffers
-		highlight_visible = true,
-		icons = {
-			-- Configure the base icons on the bufferline.
-			-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
-			buffer_index = true,
-			buffer_number = true,
-			button = "",
-			-- Enables / disables diagnostic symbols
-			diagnostics = {
-				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
-				[vim.diagnostic.severity.WARN] = { enabled = true, icon = "ﬂ" },
-				[vim.diagnostic.severity.INFO] = { enabled = false },
-				[vim.diagnostic.severity.HINT] = { enabled = true },
-			},
-			filetype = {
-				-- Sets the icon's highlight group.
-				-- If false, will use nvim-web-devicons colors
-				custom_colors = false,
-
-				-- Requires `nvim-web-devicons` if `true`
-				enabled = true,
-			},
-			separator = { left = "▎", right = "" },
-
-			-- If true, add an additional separator at the end of the buffer list
-			separator_at_end = true,
-
-			-- Configure the icons on the bufferline when modified or pinned.
-			-- Supports all the base icon options.
-			modified = { button = "●" },
-			pinned = { button = "", filename = true },
-
-			-- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
-			preset = "default",
-
-			-- Configure the icons on the bufferline based on the visibility of a buffer.
-			-- Supports all the base icon options, plus `modified` and `pinned`.
-			alternate = { filetype = { enabled = false } },
-			current = { buffer_index = true },
-			inactive = { button = "×" },
-			visible = { modified = { buffer_number = false } },
-		},
-	},
-	version = "^1.0.0", -- optional: only update when a new 1.x version is released
-	config = function()
-		local map = vim.api.nvim_set_keymap
-		local opts = { noremap = true, silent = true }
-
-		-- Leader keymaps for buffer navigation
-		map("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
-		map("n", "<leader><leader>", "<Cmd>BufferCloseAllButCurrent<CR>", opts) -- Close all except current
-		map("n", "<C-l>", "<Cmd>BufferNext<CR>", opts) -- Rotate to next buffer
-		map("n", "<C-w>", "<Cmd>BufferClose<CR>", opts) -- Rotate to next buffer
-	end,
+        map("n", "<C-h>", "<Cmd>BufferPrevious<CR>", key_opts)
+        map("n", "<leader><leader>", "<Cmd>BufferCloseAllButCurrent<CR>", key_opts)
+        map("n", "<C-l>", "<Cmd>BufferNext<CR>", key_opts)
+        map("n", "<leader>q", "<Cmd>BufferClose<CR>", key_opts)
+    end,
 }
