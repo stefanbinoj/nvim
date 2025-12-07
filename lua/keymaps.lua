@@ -69,7 +69,28 @@ vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle fold" })
 
 vim.keymap.set("n", "<leader>fp", function()
-  local path = vim.fn.expand("%:.")   -- relative path
-  print(path)                         -- show it in command area
-  vim.fn.setreg("+", path)            -- copy to system clipboard ("+")
+	local path = vim.fn.expand("%:.") -- relative path
+	print(path) -- show it in command area
+	vim.fn.setreg("+", path) -- copy to system clipboard ("+")
 end, { desc = "Copy relative file path" })
+
+vim.keymap.set({ "n", "v" }, "<leader>cs", function()
+	local filepath = vim.fn.expand("%") -- full path
+	local start_line = vim.fn.line(".")
+	local end_line = vim.fn.line("v") -- last visual selection line
+
+	local text
+	if vim.fn.mode() == "v" or vim.fn.mode() == "V" or vim.fn.mode() == "\22" then
+		start_line = vim.fn.line("v")
+		end_line = vim.fn.line(".")
+		if start_line > end_line then
+			start_line, end_line = end_line, start_line
+		end
+		text = string.format("%s:%d-%d", filepath, start_line, end_line)
+	else
+		text = string.format("%s:%d", filepath, start_line)
+	end
+
+	vim.fn.setreg("+", text) -- copy to clipboard
+	vim.notify("Copied: " .. text, vim.log.levels.INFO)
+end, { desc = "Copy file path with line number/range" })
