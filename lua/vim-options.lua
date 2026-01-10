@@ -2,12 +2,14 @@
 -- General Settings
 -- =========================
 vim.g.mapleader = " "
-vim.opt.wrap = false           -- Don’t wrap long lines
 vim.opt.swapfile = false       -- Disable swap files
 vim.opt.backup = false         -- Disable backup files
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true        -- Persistent undo history
 vim.opt.autoread = true        -- Auto-reload files changed outside
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.textwidth = 140
 
 -- =========================
 -- UI Settings
@@ -19,6 +21,7 @@ vim.opt.signcolumn = "yes"     -- Always show sign column
 vim.opt.termguicolors = true   -- Enable true colors
 vim.opt.updatetime = 50        -- Faster updates
 vim.opt.isfname:append("@-@")  -- Allow @ and - in filenames
+vim.opt.colorcolumn = "140"
 
 -- Highlight visual selection (blue)
 vim.api.nvim_set_hl(0, "Visual", { bg = "#264F78" })
@@ -27,9 +30,9 @@ vim.api.nvim_set_hl(0, "Visual", { bg = "#264F78" })
 -- Indentation
 -- =========================
 vim.opt.expandtab = true       -- Convert tabs to spaces
-vim.opt.tabstop = 4            -- Spaces per tab
-vim.opt.softtabstop = 4        -- Spaces when pressing <Tab>
-vim.opt.shiftwidth = 4         -- Spaces per indentation level
+vim.opt.tabstop = 2            -- Spaces per tab
+vim.opt.softtabstop = 2        -- Spaces when pressing <Tab>
+vim.opt.shiftwidth = 2         -- Spaces per indentation level
 vim.opt.smartindent = true     -- Auto-indent new lines
 
 -- =========================
@@ -62,10 +65,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = true   -- folding is available
-vim.opt.foldlevel = 99      -- open everything by default
+-- Folding (managed by nvim-ufo)
+vim.opt.foldcolumn = "1"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
 vim.opt.list = true
 vim.opt.listchars = {

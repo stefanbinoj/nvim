@@ -40,17 +40,15 @@ return {
         },
     },
     version = "^1.0.0",
-    -- We accept 'opts' here (provided by lazy based on the table above)
     config = function(_, opts)
-        -- VITAL: Initialize the plugin with the options
         require("barbar").setup(opts)
 
         local map = vim.api.nvim_set_keymap
         local key_opts = { noremap = true, silent = true }
 
-        map("n", "<C-h>", "<Cmd>BufferPrevious<CR>", key_opts)
+        map("n", "[b", "<Cmd>BufferPrevious<CR>", key_opts)
         map("n", "<leader><leader>", "<Cmd>BufferCloseAllButCurrent<CR>", key_opts)
-        map("n", "<C-l>", "<Cmd>BufferNext<CR>", key_opts)
+        map("n", "]b", "<Cmd>BufferNext<CR>", key_opts)
         map("n", "<leader>q", "<Cmd>BufferClose<CR>", key_opts)
     end,
 }
